@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BlazorPeliculas2</title>
+    <base href="/" />
+
+    <!-- CSS de la app -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="BlazorPeliculas2.Client.styles.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="app">Loading...</div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="js/localStorageHelper.js"></script>
+
+    <!-- 1) SweetAlert2 (CurrieTechnologies) -->
+    <script src="_content/CurrieTechnologies.Razor.SweetAlert2/sweetAlert2.min.js"></script>
+
+    <!-- 2) Blazored.Typeahead -->
+    <script src="_content/Blazored.Typeahead/blazored-typeahead.js"></script>
+
+    <!-- 3) Arranca Blazor -->
+    <script src="_framework/blazor.webassembly.js"></script>
+
+    <!-- 4) Tus utilidades globales -->
+    <script src="js/Utilidades.js"></script>
+
+    <!-- 5) ConfirmExit / AllowExit -->
+    <script>
+        window.confirmExit = function () {
+            window.addEventListener("beforeunload", function (e) {
+                e.preventDefault();
+                e.returnValue = '';
+            });
+        };
+
+        window.allowExit = function () {
+            window.removeEventListener("beforeunload", function (e) {
+                e.preventDefault();
+                e.returnValue = '';
+            });
+        };
+    </script>
+</body>
+</html>
